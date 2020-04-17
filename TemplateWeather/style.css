@@ -1,0 +1,53 @@
+@media (min-width: 1300px){
+		.content-container{
+		max-width: 1240px;
+		margin-top: 5%;
+		
+		}
+
+}
+
+.card{
+	
+	
+	background-color:#343a40!important;
+	color: white;
+	margin-top: 20px;
+	min-height:90px
+	
+}
+
+.jumbotron{
+	
+	 min-height: 300px;
+	 padding: 1rem 2rem !important
+	
+}
+.first-row{
+	
+	float:left;
+	
+}
+.col-content{
+	
+	float:left
+	
+}
+.label-content{
+	
+	float:left
+}
+
+.logo{
+    
+    float:left
+}
+
+.search-bar{
+    
+    width:60% !important;
+}
+
+.btn{
+    margin-left:2%;
+}

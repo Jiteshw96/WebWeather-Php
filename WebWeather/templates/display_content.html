@@ -1,0 +1,191 @@
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" type="text/css" href="../resources/css/main.css">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+                
+                </head>
+
+		<!--Access all elements and Display-->
+<body class= "main-body">
+	<div class ="header">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header logo">
+                    <a class="" href="#"><img src="../resources/image/logo-main.png"></a>
+                </div>
+                <div class="search-container col-sm-3 col-md-6">
+                    <form action="./display_content.php?" method="GET">
+                    <input type="text" placeholder="City Name.." name= "city" >
+                    <button type="submit" id="cn"><i class="fa fa-search"></i></button>
+                    </form>
+                    </div>
+                    <div class="dropdown-container">
+                    <div class="dropdown">
+                    <button id="unitbtn" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><span class="ulabel">Units :˚C/˚F
+                    </span> <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                    <li><a id="fahreneit">Fahrenheit</a></li>
+                    <li><a id="celcius">Celsius</a></li>
+                    </ul>
+                    </div>
+                    </div>
+                    
+                    
+                    </div>
+                    
+                    </nav>
+	</div>
+	
+	<div class= "main-content">
+		<div class="row">
+				<div class= "content-data">
+						<div class="cn-city">Mumbai</div>
+						<div class="cn-icon"> <img src="../resources/icons/accuweather/36-s.png"></div>
+						
+                        <div class="cn-time"> 5:00 AM</div>
+					
+						
+					
+					<div class="content-head-box">
+						<div class=" cn-temp">Temp : 17 C</div>
+						<div class="cn-headline">Description : Cloudy</div>
+					</div>
+					
+						<div class="content-box">
+							
+							<div class="cn-cloud"><Img src="../resources/icons/accuweather/36-s.png">  Cloudiness : 14 %</div>
+							<div class="cn-cloud"><Img src="../resources/icons/accuweather/visiblity.png"> Visiblity : 13</div>
+						</div>
+						
+					<div class="content-box">
+						
+							
+							<div class= "desc-icon"><Img src="../resources/icons/accuweather/wind.png">Wind Speed : 22 M/s</div>
+							<div class= "desc-icon"><Img src="../resources/icons/accuweather/pressure.png">Pressure : 21 hPa</div>
+							<div class= "desc-icon"><Img src="../resources/icons/accuweather/humidity.png">Humidity : 10 %</div>
+					
+					</div>
+					<div class="content-box">
+						<div class="desc-icon"><Img src="../resources/icons/accuweather/conditions.png">Conditions : Cloudy</div>
+						<div class= "desc-icon"><Img src="../resources/icons/accuweather/maxtemp.png">Max-Temp : 14 C</div>
+						<div class= "desc-icon"><Img src="../resources/icons/accuweather/mintemp.png">Min-Temp : 10 C</div>
+					
+					</div>
+						
+			
+					
+				</div>
+	 
+		</div>
+	</div>
+	<div class="row">
+        <div class="weekly-data" style="margin-top:30%">
+			<div class="weather-title">Next 5 Days forecast </div>
+				<div class="data-columns">
+				
+			
+					<div class ="data-card">
+						<div class="wk-day">
+							<div class=""> Day :</div>
+							<div class="wk-date"> Date :</div>
+							
+						</div>
+						<div class="wk-desc">
+							<div class="wk-icon"><Img src=""></div>
+							<div class="wk-phrase"></div>
+						</div>
+						<div class="wk-temp">
+							<div class="wk-temp-icon">Min Temp :<Img src="../resources/icons/accuweather/mintemp.png"></div>
+							
+							<div class="wk-temp-icon">Max Temp :<Img src="../resources/icons/accuweather/maxtemp.png"></div>
+							
+						</div>
+						
+						
+					</div>
+				
+				</div>
+	 
+		</div>
+	
+	</div>	
+	</div>
+	
+		<div class="row footer-top" style="margin-top:30%">
+			
+            <div class="footer">
+                
+                <div class="footer-terms">
+                    <a href="" target="_blank">Terms of Use </a> |
+                    <a href="#" target="_blank">Privacy Policy </a> |
+                    <a href="" target="_blank">Cookie Policy </a> |
+                    <a href="" target="_blank">Contact Us </a>
+                </div>
+                
+                <div class="copyright-text">
+                    <h4>© 2019 Copyright: WebWeather.com<h4>
+                        </div>
+                
+            </div>
+			
+		</div>
+	
+</body>
+
+<script >
+
+
+ $(document).ready(function(){
+	
+	 //Set Cookies to change Unit F
+	$('#fahreneit').click(function(){
+		
+	 
+	 $.ajax({
+		url: './display_content.php',
+		type: "GET",
+		data: {ajax: "1",unit: "F"},
+		success: function(){
+			document.cookie="unit=1";
+			window.location.reload();
+				
+				    
+			}
+   
+		});
+		
+	 
+		
+	});
+	
+	$('#celcius').click(function(){
+		 //Set Cookies to change Unit to C
+	 
+	 $.ajax({
+		url: 'display_content.php',
+		type: 'GET',
+		data: {ajax: 1,unit: "C"},
+		dataType: 'text',
+		success: function(response){
+				document.cookie="unit=0";
+				window.location.reload();
+			}
+   
+		});
+	 
+		
+	});
+	
+	
+	
+	
+}); 
+
+</script>
+</html>
+

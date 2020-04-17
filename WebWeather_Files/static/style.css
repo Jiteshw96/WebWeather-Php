@@ -1,0 +1,110 @@
+	 body{
+		height:100%;
+        background-image: url(bg.jpg);
+		background-size: cover;
+		background-position: center;
+		overflow:hidden;
+    	background-repeat: no-repeat;
+	}
+
+    .logo {
+        float: left;
+        margin-left: 2%;
+    }
+
+    .title{
+
+        margin-top: 2px !important;
+    }
+
+	.header{
+               height: 5px;
+
+	}
+h1 {
+    color: #4682B4;
+    margin-bottom: 25px;
+    font-size: 45px;
+    letter-spacing: 2px;
+    /* text-align: center;*/
+	}
+
+	h3{
+			color: coral;
+			margin-bottom: 25px;
+			font-size: 45px;
+			letter-spacing: 2px;
+			text-align: center;
+
+	}
+
+	.search-city{
+				height:25px;
+				width:700px;
+				padding:10px;
+				border:none;
+				border-radius: 25px;
+				outline: none;
+	}
+
+
+				height:40px;
+				width:150px;
+				background:#ffeb3b;
+				border: none;
+				color: #000;
+				border-radius: 25px;
+
+	}
+	.search-btn:hover{
+	                cursor:pointer;
+
+	}
+	.img{
+	        float:left;
+	}
+
+    .search-bar{
+            margin-top:10px;
+    }
+
+
+@media (min-width: 1300px){
+		.content-container{
+		max-width: 1240px;
+		margin-top: 5%;
+
+		}
+
+}
+
+.card{
+
+
+	background-color:#343a40!important;
+	color: white;
+	margin-top: 20px;
+	min-height:90px
+
+}
+
+.jumbotron{
+
+	 min-height: 300px;
+	 padding: 1rem 2rem !important
+
+}
+.first-row{
+
+	float:left;
+
+}
+.col-content{
+
+	float:left
+
+}
+.label-content{
+
+	float:left
+}
